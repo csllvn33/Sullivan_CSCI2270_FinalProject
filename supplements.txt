@@ -1,0 +1,77 @@
+Optimum Nutrition Gold Standard 100% Whey,92,protein
+BPI Sports Best BCAA,91,BCAA
+JYM Pre JYM,93,pre-workout
+Optimum Nutrition Essential AmiN.O. Energy,88,pre-workout
+BSN Syntha-6,90,protein
+Cellucor C4,86,pre-workout
+RSP Nutrition QuadraLean,87,fat burner
+Cellucor COR-Performance Whey,91,protein
+JYM Pro JYM,96,protein
+Optimum Nutrition Opti-Men,89,multivitamin
+EVLUTION NUTRITION ENGN,94,preworkout
+MusclePharm Combat Crunch Bars,96,protein
+MuscleTech Phase8,90,protein
+Quest Nutrition Quest Bar,95,protein
+JYM Post JYM Active Matrix,97,protein
+MusclePharm BCAA 3:1:2,92,BCAA
+Beast Sports Nutrition Creature Powder,92,creatine
+BSN AMINOx,94,BCAA
+Dymatize ISO-100,93,protein
+Optimum Nutrition Gold Standard 100% Casein,87,protein
+BSN N.O.-Xplode,86,pre-workout
+JYM Shred JYM,87,pre-workout
+SciVation Xtend,91,pre-workout
+Optimum Nutrition Gold Standard Pre-Workout,84,pre-workout
+ProMera Sports CON-CRET,90,creatine
+MuscleTech Platinum Multivitamin,93,multivitamin
+MuscleTech Hydroxycut Hardcore Elite,86,fat burner
+BPI Sports 1.M.R Vortex,84,pre-workout
+MusclePharm Combat Powder,92,protein
+Optimum Nutrition Micronized Creatine Powder,90,creatine
+JYM Vita JYM,95,multivitamin
+COBRA LABS The Curse,84,pre-workout
+Universal Nutrition Animal Pak,91,multivitamin
+Nutrex Lipo-6 Black Ultra Concentrate,83,fat burner
+MusclePharm CLA Core,89,fat burner
+Optimum Nutrition Fish Oil Softgels,89,multivitamin
+Controlled Labs Orange Triad,92,multivitamin
+EVLUTION NUTRITION BCAA Energy,95,BCAA
+JYM Post JYM Carb,86,protein
+JYM ZMA JYM,91,protein
+MuscleTech Anarchy,94,pre-workout
+MuscleTech Platinum 100% Creatine,96,creatine
+Cutler Nutrition Total Protein,89,protein
+Bodybuilding.com Foundation Series L-Carnitine,91,fat burner
+Bodybuilding.com Foundation Series Green Tea Extract,88,fat burner
+RSP Nutrition CLA,93,fat burner
+Optimum Nutrition BCAA 1000 Caps,89,BCAA
+Optimum Nutrition Pro Gainer,93,protein
+MuscleTech Creactor,0,creatine
+Myprotein Protein Cookies,0,protein
+Nutrex OUTRAGE,0,pre-workout
+Cellucor C4 Ripped,0,pre-workout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
