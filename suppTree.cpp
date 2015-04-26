@@ -6,6 +6,19 @@
 
 using namespace std;
 
+/*
+Function prototype:
+SuppTree();
+
+Function description:
+This constructor method initializes the private variables for the class
+
+Example:
+will not be called
+
+Precondition: variables found in the constructor must be in the "private" portion of the class
+Post condition: variables are initialized.
+*/
 SuppTree::SuppTree()
 {
     root = NULL;
@@ -13,6 +26,21 @@ SuppTree::SuppTree()
     ProjectOutput = json_object_new_object();
 }
 
+
+/*
+Function prototype:
+virtual ~SuppTree();
+
+Function description:
+This destructor method will be called when the user wants to exit the program and deletes the nodes in the BST
+
+Example:
+automatically called when the program ends.
+Will delete nodes upon user input "6"
+
+Precondition: root must be defined in order for the deletion to be successful
+Post condition: tree deleted node-by-node through the "deleteAll(node)" function.
+*/
 SuppTree::~SuppTree()
 {
     DeleteAll(root);
@@ -21,6 +49,21 @@ SuppTree::~SuppTree()
     json_object_put(ProjectOutput);
 }
 
+
+/*
+Function prototype:
+void deleteMovie(string)
+
+Function description:
+This method calculates takes a node, the root, as a parameter and deletes each node through recursive calls. The 
+deletion is executed through a post-order tree traversal.
+
+Example:
+DeleteAll(root);
+
+Precondition: node passed in must be the root in order to complete a successfull tree deletion
+Post condition: DeleteAll method will result in an empty tree if executed correctly
+*/
 /* Used to delete all nodes in the tree */
 void SuppTree::DeleteAll(SuppNode * node)
 {
@@ -36,11 +79,40 @@ void SuppTree::DeleteAll(SuppNode * node)
     return;
 }
 
+
+/*
+Function prototype:
+void initJson()
+
+Function description:
+This method initializes the json code output to one specific variable to access throughout the class
+
+Example:
+function serves as a constructor, will not be called
+
+Precondition: include Json library and use Json formatting in code
+Post condition: Project output can be used to store the json operations.
+*/
 void SuppTree::initJson()
 {
     ProjectOutput = json_object_new_object();
 }
 
+
+/*
+Function prototype:
+void printInOrder()
+
+Function description:
+This method does not take any parameters. The purpose of this function is to call the private function
+"printInOrder(node, traverselog)". Calling this function is cleaner than producing the print statements
+in the other function.
+
+Example:
+printInOrder();
+
+Precondition: Must include the private function printInOrder(node, traverseLog) to properly work
+Post condition: Supplements are printed in order, which in this case, prints the supplements in alphabetical order.
 /* Helper for the printMovieInventory recursive function */
 void SuppTree::printInOrder()
 {
@@ -61,6 +133,21 @@ void SuppTree::printInOrder()
     return;
 }
 
+
+/*
+Function prototype:
+void printInOrder();
+
+Function description:
+This method is a private version of the previous method. The recursive calls enables the tree to be printed
+in alphabetical order.
+
+Example:
+printInOrder(root, traverseLog);
+
+Precondition: For a successfuly BST print, the root should be passed in as the node parameter.
+Post condition: BST printed in alphabetical order.
+*/
 /* Prints the inventory(in order traversal) */
 void SuppTree::printInOrder(SuppNode * node, json_object * traverseLog)
 {
@@ -70,7 +157,7 @@ void SuppTree::printInOrder(SuppNode * node, json_object * traverseLog)
         printInOrder(node->leftChild,traverseLog);
 
     // Value
-    cout<<"Movie: "<<node->name<< endl;
+    cout<<"Supplement: "<<node->name<< endl;
 
     // Update the traversal log
     json_object *curTitle = json_object_new_string(node->name.c_str());
@@ -83,7 +170,21 @@ void SuppTree::printInOrder(SuppNode * node, json_object * traverseLog)
     return;
 }
 
+/*
+Function prototype:
+void addSupp(name, rating, description);
 
+Function description:
+This method adds the contents from "supplements.txt" into a BST. The contents are separated in Driver.cpp
+and when called, names are compared and sorted as a normal BST.
+
+Example:
+addSupp("Nutrex OUTRAGE", 90, "pre-workout"); (This information would be found in the .txt file)
+
+Precondition: Proper use of the getline method in Diver.cpp is necessary for code. names must be strings, ratings ints 
+and descriptions strings.
+Post condition: Contents passed in are stored into a node which is also added into the BST in proper order.
+*/
 void SuppTree::addSupp(string name, int rating, string description)
 {
     int index = 0;
@@ -159,7 +260,23 @@ void SuppTree::addSupp(string name, int rating, string description)
 
 }
 
-/* used to find movie information, provides info or says movie can't be found */
+
+/*
+Function prototype:
+void findSupp(string name);
+
+Function description:
+This method simply calls searchSuppTree(node, name, traverselog). This particular method is passed in
+the name of a supplement to search for. Although this method does not actual search, the print statements are 
+found in this method.
+
+Example:
+findSupp("RSP Nutrition CLA");
+
+Precondition: Name must be typed in exactly when passed in as a parameter or will not be found.
+Post condition: Method prints contents of the supplement the user wanted to find
+*/
+/* used to find movie information, provides info or says supp can't be found */
 void SuppTree::findSupp(std::string name)
 {
     // Create a traversal log
@@ -168,20 +285,36 @@ void SuppTree::findSupp(std::string name)
     SuppNode * foundSupp = searchSuppTree(root,name, travLog);
     if (foundSupp != NULL)
     {
-        cout << "Movie Info:" << endl;
+        cout << "Supplement Info:" << endl;
         cout << "===========" << endl;
-        /*cout << "Ranking:" << foundSupp->ranking << endl;
-        cout << "Title:" << foundMovie->title << endl;
-        cout << "Year:" << foundMovie->year << endl;
-        cout << "Quantity:" << foundMovie->quantity << endl;
-        */
+        cout << "Rating:" << foundSupp->rating << endl;
+        cout << "Name:" << foundSupp->name << endl;
+        cout << "Type:" << foundSupp->description << endl;
+        //cout << "Quantity:" << foundSupp->quantity << endl;
+        
     }
     else
-        cout << "Movie not found." << endl;
+        cout << "Supplement not found." << endl;
 
     return;
 }
 
+
+/*
+Function prototype:
+SuppNde* searchSuppTree(SuppNode * node, string name, json_object traverseLog);
+
+Function description:
+Method will kepp searching for the name passed in via recursive calls. If that name does not exist then
+the user is notified.
+
+Example:
+searchSuppTree(root, "RSP Nutrition CLA", traverseLog);
+
+Precondition: Node passed in should be root to successfully search entire tree. Also, name must be exact - including capital
+letters.
+Post condition: Node containing the name passed in is returned. This returned node can be used in other methods.
+*/
 SuppNode* SuppTree::searchSuppTree(SuppNode * node, string name, json_object * traverseLog)
 {
     // Add the current node to the traverse log
@@ -209,6 +342,23 @@ SuppNode* SuppTree::searchSuppTree(SuppNode * node, string name, json_object * t
     }
 }
 
+
+
+/*
+Function prototype:
+void buySupp(string name);
+
+Function description:
+This method decrements the stock of a certain supplement when user buys it. Uses the searchSuppTree function
+to find the name passed in.
+
+Example:
+buySupp("RSP Nutrition CLA");
+
+Precondition: Supplement Should have >= 1 in stock to buy.
+Post condition: If bought, supplement stock is decremented. When stock = 0, supplement is deleted via the
+deleteSupp method.
+*/
 /*
 void SuppTree::buySupp(std::string name)
 {
@@ -220,18 +370,18 @@ void SuppTree::buySupp(std::string name)
     json_object * travLog = json_object_new_array();
     SuppNode * foundSupp = searchSuppTree(root, name, rating,travLog);
 
-    // If the movie exists.
+    // If the Supplement exists.
     if (foundSupp != NULL)
     {
         // If it's in stock.
         if (foundSupp->quantity > 0)
         {
-            cout << "Movie has been rented." << endl;
+            cout << "Supplement has been bought." << endl;
             foundSupp->quantity--;
             stockOutput = foundSupp->quantity;
 
             // Update our json object
-            json_object *jsonOperation = json_object_new_string("rent");
+            json_object *jsonOperation = json_object_new_string("buy");
             json_object_object_add(newJSON,"operation",jsonOperation);
             json_object *jsonTitle = json_object_new_string(title.c_str());
             json_object_object_add(newJSON,"parameter",jsonTitle);
@@ -244,9 +394,9 @@ void SuppTree::buySupp(std::string name)
             //change this to print information
             cout << "Movie Info:" << endl;
             cout << "===========" << endl;
-            cout << "Ranking:" << foundMovie->ranking << endl;
-            cout << "Title:" << foundMovie->title << endl;
-            cout << "Year:" << foundMovie->year << endl;
+            cout << "Rating:" << foundMovie->rating << endl;
+            cout << "Name:" << foundMovie->name << endl;
+            cout << "Type:" << foundMovie->description << endl;
             cout << "Quantity:" << foundMovie->quantity << endl;
             // If the stock is 0 delete the movie
             if (foundMovie->quantity == 0)
@@ -255,16 +405,31 @@ void SuppTree::buySupp(std::string name)
         }
         // If it's not in stock.
         else
-            cout << "Movie out of stock." << endl;
+            cout << "Supplement out of stock." << endl;
 
     }
     // If it doesn't exist.
     else
-        cout << "Movie not found." << endl;
+        cout << "Supplement not found." << endl;
 
 }
 */
 
+
+/*
+Function prototype:
+void deleteSupp(string name);
+
+Function description:
+Method is passed in a name, which is then passed into searchSuppTree. Once node is found, it resets
+parents and children, then deletes the node.
+
+Example:
+deleteSupp("RSP Nutrtion CLA");
+
+Precondition: Name must be exact, node must exist, and seachSuppTree must work properly.
+Post condition: Supplement desired to be deleted will be deleted without cutting off any branches of the tree.
+*/
 void SuppTree::deleteSupp(std::string name)
 {
 
@@ -358,12 +523,27 @@ void SuppTree::deleteSupp(std::string name)
     }
     // If it doesn't exist
     else
-        cout << "Movie not found." << endl;
+        cout << "Supplement not found." << endl;
 
 
 
 }
 
+
+/*
+Function prototype:
+int countSupps();
+
+Function description:
+Method calls the private function countSupps(SuppNode *node). This function returns the number produced
+when countSupps(SuppNode *node) is called.
+
+Example:
+countSupps(); No parameters needed.
+
+Precondition: Private function to count nodes must exist and be called in order for this function to work.
+Post condition: Number of Supplements (nodes) are counted and returned.
+*/
 int SuppTree::countSupps()
 {
     // Create the json object for this operation
@@ -383,6 +563,18 @@ int SuppTree::countSupps()
     return count;
 }
 
+/*
+Function prototype:
+int countSupps(SuppNode *node);
+
+Function description:
+Method counts the number of nodes through recursive calls. 
+Example:
+countSupps(root);
+
+Precondition: To count all of the nodes in the BST, root should be passed in as a parameter.
+Post condition: Method returns the number of nodes in the BST.
+*/
 int SuppTree::countSupps(SuppNode *node)
 {
     if (node == NULL)
@@ -391,7 +583,66 @@ int SuppTree::countSupps(SuppNode *node)
 }
 
 
+
+/* getter method for json operations*/
 json_object* SuppTree::getJsonObject()
 {
     return ProjectOutput;
+}
+
+/*
+Function prototype:
+void printSorted();
+
+Function description:
+This method calls the bubble sort method and prints the ratings in ascending order.
+
+Example:
+printSorted(); no parameters needed
+
+Precondition:bubble sort method must sort the ratings correctly.
+Post condition: ratings are printed in ascending (low to high) order.
+*/
+/*
+void SuppTree::printSorted()
+{
+    for(int i =0; i < 51; i++)
+    {
+        bubbleSort(suppArray[i]->rating, 52);
+    }
+}
+*/
+
+
+/*
+Function prototype:
+void bubbleSort(int *array, int n);
+
+Function description:
+This method sorts the ratings in suppArray through a bubble sort. Method will be called in printSorted()
+to show results.
+
+Example:
+bubbleSort(suppArray[]->rating, 52); There are 52 items in the array
+
+Precondition: Items in the array must be integers in order to be sorted. In this case, the ratings are being sorted
+Post condition: When finished srting, the method produces a sorted array from low rating to high rating.
+
+*/
+void SuppTree::bubbleSort(int *array, int n)
+{ //n is the size of the array
+    int swap;
+    for(int c = 0; c < n - 1; c++){
+        for(int d = 0; d < n - c - 1; d++){
+            if(array[d] > array[d+1]){
+                swap = array[d];
+                array[d] = array[d+1];
+                array[d+1] = swap;
+            }
+        }
+    }
+    cout<<"sorted list, ascending order:"<<endl;
+    for(int c = 0; c < n; c++){
+       cout<<array[c]<<endl;
+   }
 }
