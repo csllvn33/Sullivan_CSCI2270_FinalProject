@@ -19,5 +19,7 @@ None as of 16 April 2015
 Open Isuues/Bugs:
 When executing code, seg fault occurs very frequently. However, the code can be successful some of the time if the execute it enough. This is a very bizarre bug and would love some feedback on it. Also, when the user inputs "5" which is find a supplement, it will find the supplement but then say "Goodbye!" and exit the code.
 
+***Also, I apologize for all of my commit activity to be on 4/26/2015 as I am finally figuring out how to maneuver Github (somewhat) successfully.
+
 
 
