@@ -66,7 +66,7 @@ int main(int argc, char*argv[])
             */
             // Rent a movie
             case 1:
-                cout << "Enter title:" << endl;
+                cout << "Enter Name:" << endl;
                 getline(cin,name);
                 //ST->buySupp(name);
                 break;
@@ -77,16 +77,21 @@ int main(int argc, char*argv[])
 
             // Delete Node
             case 3:
-                cout << "Enter title:" << endl;
+                cout << "Enter Name:" << endl;
                 getline(cin,name);
                 ST->deleteSupp(name);
                 break;
             // Count Tree
             case 4:
-                cout << "Tree contains: " << ST->countSupps() << " nodes." << endl;
+                cout << "Tree contains: " << ST->countSupps() << " Supplements." << endl;
+                break;
+            case 5:
+                cout << "Enter exact name: " << endl;
+                getline(cin,name);
+                ST->findSupp(name);
                 break;
             // Quit
-            case 5:
+            case 6:
                 cout << "Goodbye!" << endl;
                 quit = true;
                 break;
@@ -117,11 +122,12 @@ void displayMenu()
 {
     cout << "======Main Menu=====" << endl;
     //cout << "1. Find a movie" << endl;
-    cout << "1. Rent a movie" << endl;
+    cout << "1. Buy a Supplement" << endl;
     cout << "2. Print the inventory" << endl;
-    cout << "3. Delete a movie" << endl;
-    cout << "4. Count the movies" << endl;
-    cout << "5. Quit" << endl;
+    cout << "3. Delete a supplement" << endl;
+    cout << "4. Count the supplements" << endl;
+    cout << "5. Search for a supplement" << endl;
+    cout << "6. Quit" << endl;
     return;
 }
 
@@ -147,7 +153,7 @@ int getFileSize(char * fileName)
 /* reads file into tree */
 void readFileIntoTree(SuppTree * ST, char * fileName)
 {
-    cout << "reading file" << endl;
+    //cout << "reading file" << endl;
     ifstream in_stream;
     cout << fileName << endl;
     in_stream.open(fileName);
@@ -163,7 +169,7 @@ void readFileIntoTree(SuppTree * ST, char * fileName)
     //string stock;
 for(int i = 0; i < 51; i++){
     while (!in_stream.eof())
-    {   cout << "inside while loop" << endl;
+    {  // cout << "inside while loop" << endl;
         name ="";
         getline(in_stream, name, ',');
         getline(in_stream, rating, ',');
@@ -172,7 +178,7 @@ for(int i = 0; i < 51; i++){
         
         if (name != "")
         {
-            cout << " inside if statement" << endl;
+          //  cout << " inside if statement" << endl;
             //cout << "Adding: " << name << endl;
             ST->addSupp(name, atoi(rating.c_str()), description);
            // suppArray[i] = 
