@@ -27,6 +27,7 @@ SuppTree::SuppTree()
 }
 
 
+
 /*
 Function prototype:
 virtual ~SuppTree();
