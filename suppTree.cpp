@@ -185,7 +185,7 @@ Precondition: Proper use of the getline method in Diver.cpp is necessary for cod
 and descriptions strings.
 Post condition: Contents passed in are stored into a node which is also added into the BST in proper order.
 */
-void SuppTree::addSupp(string name, int rating, string description)
+void SuppTree::addSupp(string name, int rating, string description, int stock)
 {
     int index = 0;
 
@@ -196,7 +196,7 @@ void SuppTree::addSupp(string name, int rating, string description)
     json_object * travLog = json_object_new_array();
 
     // Create the node we will be inserting
-    SuppNode * newSupp = new SuppNode(name, rating, description);
+    SuppNode * newSupp = new SuppNode(name, rating, description, stock);
     SuppNode * x = root;
     SuppNode * y = NULL;
 
@@ -287,9 +287,10 @@ void SuppTree::findSupp(std::string name)
     {
         cout << "Supplement Info:" << endl;
         cout << "===========" << endl;
-        cout << "Rating:" << foundSupp->rating << endl;
-        cout << "Name:" << foundSupp->name << endl;
-        cout << "Type:" << foundSupp->description << endl;
+        cout << "Rating: " << foundSupp->rating << endl;
+        cout << "Name: " << foundSupp->name << endl;
+        cout << "Type: " << foundSupp->description << endl;
+        cout << "Stock: " << foundSupp->stock << endl;
         //cout << "Quantity:" << foundSupp->quantity << endl;
         
     }
@@ -359,7 +360,7 @@ Precondition: Supplement Should have >= 1 in stock to buy.
 Post condition: If bought, supplement stock is decremented. When stock = 0, supplement is deleted via the
 deleteSupp method.
 */
-/*
+
 void SuppTree::buySupp(std::string name)
 {
     // Create the json object for this operation
@@ -368,22 +369,22 @@ void SuppTree::buySupp(std::string name)
     int stockOutput = 0;
 
     json_object * travLog = json_object_new_array();
-    SuppNode * foundSupp = searchSuppTree(root, name, rating,travLog);
+    SuppNode * foundSupp = searchSuppTree(root, name,travLog);
 
     // If the Supplement exists.
     if (foundSupp != NULL)
     {
         // If it's in stock.
-        if (foundSupp->quantity > 0)
+        if (foundSupp->stock > 0)
         {
             cout << "Supplement has been bought." << endl;
-            foundSupp->quantity--;
-            stockOutput = foundSupp->quantity;
+            foundSupp->stock--;
+            stockOutput = foundSupp->stock;
 
             // Update our json object
             json_object *jsonOperation = json_object_new_string("buy");
             json_object_object_add(newJSON,"operation",jsonOperation);
-            json_object *jsonTitle = json_object_new_string(title.c_str());
+            json_object *jsonTitle = json_object_new_string(name.c_str());
             json_object_object_add(newJSON,"parameter",jsonTitle);
             json_object *jsonOutput = json_object_new_string(to_string(stockOutput).c_str());
             json_object_object_add(newJSON,"output",jsonOutput);
@@ -394,13 +395,13 @@ void SuppTree::buySupp(std::string name)
             //change this to print information
             cout << "Movie Info:" << endl;
             cout << "===========" << endl;
-            cout << "Rating:" << foundMovie->rating << endl;
-            cout << "Name:" << foundMovie->name << endl;
-            cout << "Type:" << foundMovie->description << endl;
-            cout << "Quantity:" << foundMovie->quantity << endl;
+            cout << "Rating:" << foundSupp->rating << endl;
+            cout << "Name:" << foundSupp->name << endl;
+            cout << "Type:" << foundSupp->description << endl;
+            cout << "Stock:" << foundSupp->stock << endl;
             // If the stock is 0 delete the movie
-            if (foundMovie->quantity == 0)
-                deleteMovieNode(foundMovie->title);
+            if (foundSupp->stock == 0)
+                deleteSupp(foundSupp->name);
 
         }
         // If it's not in stock.
@@ -413,7 +414,7 @@ void SuppTree::buySupp(std::string name)
         cout << "Supplement not found." << endl;
 
 }
-*/
+
 
 
 /*
