@@ -8,17 +8,19 @@ struct SuppNode{
     std::string name;
     int rating;
     std::string description;
+    int stock;
     SuppNode *parent;
     SuppNode *leftChild;
     SuppNode *rightChild;
 
     SuppNode(){};
 
-    SuppNode(std::string in_name, int in_rating, std ::string in_description)
+    SuppNode(std::string in_name, int in_rating, std ::string in_description, int in_stock)
     {
         name = in_name;
         rating = in_rating;
         description = in_description;
+        stock = in_stock;
     }
 
 };
@@ -34,9 +36,9 @@ class SuppTree
         void printHighFirst();
         void printLowFirst();
         int countSupps();
-        void addToArray(std::string name, int rating, std::string description);
+        void addToArray(std::string name, int rating, std::string description, int stock);
         void deleteSupp(std::string name);
-        void addSupp(std::string name, int rating, std::string description);
+        void addSupp(std::string name, int rating, std::string description, int stock);
         SuppNode* searchSuppTree(SuppNode * node, std::string name, json_object * traverseLog);
         void findSupp(std::string name);
         void buySupp(std::string name);
@@ -55,7 +57,7 @@ class SuppTree
         void printLowFirst(SuppNode *node, json_object * traverseLog);
         int countSupps(SuppNode *node);
 
-        SuppNode* searchSuppTree(SuppNode * node, std::string name, int rating, json_object * traverseLog);
+       // SuppNode* searchSuppTree(SuppNode * node, std::string name, json_object * traverseLog);
         SuppNode *root;
         json_object * ProjectOutput;
         SuppNode* suppArray[52];
