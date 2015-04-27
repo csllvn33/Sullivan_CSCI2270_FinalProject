@@ -398,7 +398,7 @@ void SuppTree::buySupp(std::string name)
             opCount++;
 
             //change this to print information
-            cout << "Movie Info:" << endl;
+            cout << "Supplement Info:" << endl;
             cout << "===========" << endl;
             cout << "Rating:" << foundSupp->rating << endl;
             cout << "Name:" << foundSupp->name << endl;
@@ -641,7 +641,8 @@ void SuppTree::bubbleSort(SuppNode *array [52], int n)
         for(int d = 0; d < (n - c - 1); d++){
 
             if(array[d]->rating > array[d+1]->rating){
-                cout << "inside if statement" << endl;
+
+                //cout << "inside if statement" << endl;
                 swap = array[d]->rating;
                 array[d]->rating = array[d+1]->rating;
                 array[d+1]->rating = swap;

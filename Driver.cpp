@@ -93,7 +93,8 @@ int main(int argc, char*argv[])
                 break;
             case 6:
                 
-               // ST->printSorted();
+               ST->printSorted();
+               break;
             // Quit
             case 7:
                 cout << "Goodbye!" << endl;
@@ -158,9 +159,10 @@ int getFileSize(char * fileName)
 /* reads file into tree */
 void readFileIntoTree(SuppTree * ST, char * fileName)
 {
+    int counter = 1;
     //cout << "reading file" << endl;
     ifstream in_stream;
-    cout << fileName << endl;
+    cout << "Redaing file: "<<fileName << endl;
     in_stream.open(fileName);
    // cout << "opened" << endl;
     if (!in_stream)
@@ -175,7 +177,7 @@ void readFileIntoTree(SuppTree * ST, char * fileName)
     //string stock;
 for(int i = 0; i < 51; i++){
     while (!in_stream.eof())
-    {  // cout << "inside while loop" << endl;
+    {   //cout << "inside while loop" << endl;
         name ="";
         getline(in_stream, name, ',');
         getline(in_stream, rating, ',');
@@ -188,8 +190,8 @@ for(int i = 0; i < 51; i++){
           //  cout << " inside if statement" << endl;
             //cout << "Adding: " << name << endl;
             ST->addSupp(name, atoi(rating.c_str()), description, atoi(stock.c_str()));
-           // suppArray[i] = 
-
+            //cout <<counter<<" "<< "Added: " << name << endl;
+            counter++;
         }
 
         }
