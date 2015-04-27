@@ -1,77 +1,52 @@
-Optimum Nutrition Gold Standard 100% Whey,92,protein
-BPI Sports Best BCAA,91,BCAA
-JYM Pre JYM,93,pre-workout
-Optimum Nutrition Essential AmiN.O. Energy,88,pre-workout
-BSN Syntha-6,90,protein
-Cellucor C4,86,pre-workout
-RSP Nutrition QuadraLean,87,fat burner
-Cellucor COR-Performance Whey,91,protein
-JYM Pro JYM,96,protein
-Optimum Nutrition Opti-Men,89,multivitamin
-EVLUTION NUTRITION ENGN,94,preworkout
-MusclePharm Combat Crunch Bars,96,protein
-MuscleTech Phase8,90,protein
-Quest Nutrition Quest Bar,95,protein
-JYM Post JYM Active Matrix,97,protein
-MusclePharm BCAA 3:1:2,92,BCAA
-Beast Sports Nutrition Creature Powder,92,creatine
-BSN AMINOx,94,BCAA
-Dymatize ISO-100,93,protein
-Optimum Nutrition Gold Standard 100% Casein,87,protein
-BSN N.O.-Xplode,86,pre-workout
-JYM Shred JYM,87,pre-workout
-SciVation Xtend,91,pre-workout
-Optimum Nutrition Gold Standard Pre-Workout,84,pre-workout
-ProMera Sports CON-CRET,90,creatine
-MuscleTech Platinum Multivitamin,93,multivitamin
-MuscleTech Hydroxycut Hardcore Elite,86,fat burner
-BPI Sports 1.M.R Vortex,84,pre-workout
-MusclePharm Combat Powder,92,protein
-Optimum Nutrition Micronized Creatine Powder,90,creatine
-JYM Vita JYM,95,multivitamin
-COBRA LABS The Curse,84,pre-workout
-Universal Nutrition Animal Pak,91,multivitamin
-Nutrex Lipo-6 Black Ultra Concentrate,83,fat burner
-MusclePharm CLA Core,89,fat burner
-Optimum Nutrition Fish Oil Softgels,89,multivitamin
-Controlled Labs Orange Triad,92,multivitamin
-EVLUTION NUTRITION BCAA Energy,95,BCAA
-JYM Post JYM Carb,86,protein
-JYM ZMA JYM,91,protein
-MuscleTech Anarchy,94,pre-workout
-MuscleTech Platinum 100% Creatine,96,creatine
-Cutler Nutrition Total Protein,89,protein
-Bodybuilding.com Foundation Series L-Carnitine,91,fat burner
-Bodybuilding.com Foundation Series Green Tea Extract,88,fat burner
-RSP Nutrition CLA,93,fat burner
-Optimum Nutrition BCAA 1000 Caps,89,BCAA
-Optimum Nutrition Pro Gainer,93,protein
-MuscleTech Creactor,0,creatine
-Myprotein Protein Cookies,0,protein
-Nutrex OUTRAGE,0,pre-workout
-Cellucor C4 Ripped,0,pre-workout
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Optimum Nutrition Gold Standard 100% Whey,92,protein,6
+BPI Sports Best BCAA,91,BCAA,9
+JYM Pre JYM,93,pre-workout,10
+Optimum Nutrition Essential AmiN.O. Energy,88,pre-workout,12
+BSN Syntha-6,90,protein,5
+Cellucor C4,86,pre-workout,7
+RSP Nutrition QuadraLean,87,fat burner,8
+Cellucor COR-Performance Whey,91,protein,9
+JYM Pro JYM,96,protein,12
+Optimum Nutrition Opti-Men,89,multivitamin,4
+EVLUTION NUTRITION ENGN,94,preworkout,7
+MusclePharm Combat Crunch Bars,96,protein,9
+MuscleTech Phase8,90,protein,3
+Quest Nutrition Quest Bar,95,protein,6
+JYM Post JYM Active Matrix,97,protein,6
+MusclePharm BCAA 3:1:2,92,BCAA,8
+Beast Sports Nutrition Creature Powder,92,creatine,10
+BSN AMINOx,94,BCAA,15
+Dymatize ISO-100,93,protein,30
+Optimum Nutrition Gold Standard 100% Casein,87,protein,40
+BSN N.O.-Xplode,86,pre-workout,50
+JYM Shred JYM,87,pre-workout,60
+SciVation Xtend,91,pre-workout,12
+Optimum Nutrition Gold Standard Pre-Workout,84,pre-workout,34
+ProMera Sports CON-CRET,90,creatine,3
+MuscleTech Platinum Multivitamin,93,multivitamin,5
+MuscleTech Hydroxycut Hardcore Elite,86,fat burner,7
+BPI Sports 1.M.R Vortex,84,pre-workout,5
+MusclePharm Combat Powder,92,protein,8
+Optimum Nutrition Micronized Creatine Powder,90,creatine,9
+JYM Vita JYM,95,multivitamin,5
+COBRA LABS The Curse,84,pre-workout,8
+Universal Nutrition Animal Pak,91,multivitamin,4
+Nutrex Lipo-6 Black Ultra Concentrate,83,fat burner,9
+MusclePharm CLA Core,89,fat burner,32
+Optimum Nutrition Fish Oil Softgels,89,multivitamin,45
+Controlled Labs Orange Triad,92,multivitamin,67
+EVLUTION NUTRITION BCAA Energy,95,BCAA,34
+JYM Post JYM Carb,86,protein,23
+JYM ZMA JYM,91,protein,45
+MuscleTech Anarchy,94,pre-workout,23
+MuscleTech Platinum 100% Creatine,96,creatine,87
+Cutler Nutrition Total Protein,89,protein,23
+Bodybuilding.com Foundation Series L-Carnitine,91,fat burner,45
+Bodybuilding.com Foundation Series Green Tea Extract,88,fat burner,22
+RSP Nutrition CLA,93,fat burner,12
+Optimum Nutrition BCAA 1000 Caps,89,BCAA,23
+Optimum Nutrition Pro Gainer,93,protein,44
+MuscleTech Creactor,0,creatine,12
+Myprotein Protein Cookies,0,protein,11
+Nutrex OUTRAGE,0,pre-workout,11
+Cellucor C4 Ripped,0,pre-workout,4
