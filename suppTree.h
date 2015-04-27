@@ -40,7 +40,7 @@ class SuppTree
         SuppNode* searchSuppTree(SuppNode * node, std::string name, json_object * traverseLog);
         void findSupp(std::string name);
         void buySupp(std::string name);
-        void bubbleSort(int *array, int n);
+        void bubbleSort(SuppNode *array [52], int n);
        void printSorted();
         //void helpDelete(SuppNode *node);
         void initJson();
