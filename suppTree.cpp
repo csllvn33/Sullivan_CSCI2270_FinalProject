@@ -22,6 +22,7 @@ Post condition: variables are initialized.
 SuppTree::SuppTree()
 {
     root = NULL;
+
     opCount = 1;
     ProjectOutput = json_object_new_object();
 }
@@ -199,6 +200,10 @@ void SuppTree::addSupp(string name, int rating, string description, int stock)
     SuppNode * newSupp = new SuppNode(name, rating, description, stock);
     SuppNode * x = root;
     SuppNode * y = NULL;
+     newSupp->rightChild = NULL;
+     newSupp->leftChild = NULL;
+     newSupp->parent = NULL;
+
 
    // cout << x->name << endl;
     // Do we have an empty tree?
@@ -607,10 +612,8 @@ Post condition: ratings are printed in ascending (low to high) order.
 
 void SuppTree::printSorted()
 {
-    for(int i =0; i < 51; i++)
-    {
+    
         bubbleSort(suppArray, 52);
-    }
 }
 
 
@@ -632,10 +635,13 @@ Post condition: When finished srting, the method produces a sorted array from lo
 */
 void SuppTree::bubbleSort(SuppNode *array [52], int n)
 { //n is the size of the array
+
     int swap;
     for(int c = 0; c < n - 1; c++){
-        for(int d = 0; d < n - c - 1; d++){
+        for(int d = 0; d < (n - c - 1); d++){
+
             if(array[d]->rating > array[d+1]->rating){
+                cout << "inside if statement" << endl;
                 swap = array[d]->rating;
                 array[d]->rating = array[d+1]->rating;
                 array[d+1]->rating = swap;
@@ -644,6 +650,6 @@ void SuppTree::bubbleSort(SuppNode *array [52], int n)
     }
     cout<<"sorted list, ascending order:"<<endl;
     for(int c = 0; c < n; c++){
-       cout<<array[c]->rating<<endl;
+       cout<< array[c]->name <<": "<<array[c]->rating <<endl;
    }
 }
