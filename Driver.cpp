@@ -68,11 +68,12 @@ int main(int argc, char*argv[])
             case 1:
                 cout << "Enter Name:" << endl;
                 getline(cin,name);
-                //ST->buySupp(name);
+                ST->buySupp(name);
                 break;
             // Print the inventory
             case 2:
                 ST->printInOrder();
+               // ST->printSorted();
                 break;
 
             // Delete Node
@@ -90,8 +91,11 @@ int main(int argc, char*argv[])
                 getline(cin,name);
                 ST->findSupp(name);
                 break;
-            // Quit
             case 6:
+                
+               // ST->printSorted();
+            // Quit
+            case 7:
                 cout << "Goodbye!" << endl;
                 quit = true;
                 break;
@@ -127,7 +131,8 @@ void displayMenu()
     cout << "3. Delete a supplement" << endl;
     cout << "4. Count the supplements" << endl;
     cout << "5. Search for a supplement" << endl;
-    cout << "6. Quit" << endl;
+    cout << "6. See supplement ratings in order" << endl;
+    cout << "7. Quit" << endl;
     return;
 }
 
@@ -166,6 +171,7 @@ void readFileIntoTree(SuppTree * ST, char * fileName)
     string name;
     string rating;
     string description;
+    string stock;
     //string stock;
 for(int i = 0; i < 51; i++){
     while (!in_stream.eof())
@@ -173,14 +179,15 @@ for(int i = 0; i < 51; i++){
         name ="";
         getline(in_stream, name, ',');
         getline(in_stream, rating, ',');
-        getline(in_stream, description);
+        getline(in_stream, description, ',');
+        getline(in_stream, stock);
        // getline(in_stream, quantity); // "\n" is the default delimiter
         
         if (name != "")
         {
           //  cout << " inside if statement" << endl;
             //cout << "Adding: " << name << endl;
-            ST->addSupp(name, atoi(rating.c_str()), description);
+            ST->addSupp(name, atoi(rating.c_str()), description, atoi(stock.c_str()));
            // suppArray[i] = 
 
         }
