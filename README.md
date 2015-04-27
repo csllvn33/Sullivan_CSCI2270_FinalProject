@@ -6,6 +6,7 @@ For our final project, my code will read in a list of supplements (as in protein
 
 Dependencies:
 the file "supplements.txt" will be read in.
+when executing code, type : ./a.out supplements.txt
 
 System requirements:
 I write and run code on a windows, however OS should not be a specific factor.
@@ -17,7 +18,7 @@ Contributors:
 None as of 16 April 2015
 
 Open Isuues/Bugs:
-When executing code, seg fault occurs very frequently - this has only been a problem after buySupp was implemented. However, the code can be successful some of the time if the execute it enough. This is a very bizarre bug and would love some feedback on it. Also, when the user inputs "5" which is find a supplement, it will find the supplement but then say "Goodbye!" and exit the code.
+Seg fault when user wants "6". From print statements, the code breaks on the if statement on line 643. 
 
 ***Also, I apologize for all of my commit activity to be on 4/26/2015 as I am finally figuring out how to maneuver Github (somewhat) successfully.
 
