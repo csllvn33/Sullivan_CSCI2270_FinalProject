@@ -27,7 +27,6 @@ SuppTree::SuppTree()
 }
 
 
-
 /*
 Function prototype:
 virtual ~SuppTree();
@@ -604,15 +603,15 @@ printSorted(); no parameters needed
 Precondition:bubble sort method must sort the ratings correctly.
 Post condition: ratings are printed in ascending (low to high) order.
 */
-/*
+
 void SuppTree::printSorted()
 {
     for(int i =0; i < 51; i++)
     {
-        bubbleSort(suppArray[i]->rating, 52);
+        bubbleSort(suppArray, 52);
     }
 }
-*/
+
 
 
 /*
@@ -630,20 +629,20 @@ Precondition: Items in the array must be integers in order to be sorted. In this
 Post condition: When finished srting, the method produces a sorted array from low rating to high rating.
 
 */
-void SuppTree::bubbleSort(int *array, int n)
+void SuppTree::bubbleSort(SuppNode *array [52], int n)
 { //n is the size of the array
     int swap;
     for(int c = 0; c < n - 1; c++){
         for(int d = 0; d < n - c - 1; d++){
-            if(array[d] > array[d+1]){
-                swap = array[d];
-                array[d] = array[d+1];
-                array[d+1] = swap;
+            if(array[d]->rating > array[d+1]->rating){
+                swap = array[d]->rating;
+                array[d]->rating = array[d+1]->rating;
+                array[d+1]->rating = swap;
             }
         }
     }
     cout<<"sorted list, ascending order:"<<endl;
     for(int c = 0; c < n; c++){
-       cout<<array[c]<<endl;
+       cout<<array[c]->rating<<endl;
    }
 }
