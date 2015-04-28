@@ -6,7 +6,9 @@ For our final project, my code will read in a list of supplements (as in protein
 
 Dependencies:
 the file "supplements.txt" will be read in.
-when executing code, type : ./a.out supplements.txt
+when executing code, type :
+compile: g++ -std=c++11 Driver.cpp suppTree.cpp -ljson
+execute: ./a.out supplements.txt
 
 System requirements:
 I write and run code on a windows 8, however OS should not be a specific factor.
@@ -18,9 +20,9 @@ Contributors:
 None as of 16 April 2015
 
 Open Isuues/Bugs:
-Seg fault when user wants "6". From print statements, the code breaks on the if statement on line 643. 
+Seg fault when user wants "6", which contains my sort algorithm. From print statements, the code breaks on the if statement on line 643(suppTree.cpp). 
 
-***Also, I apologize for all of my commit activity to be on 4/26/2015 as I am finally figuring out how to maneuver Github (somewhat) successfully.
+
 
 
 
