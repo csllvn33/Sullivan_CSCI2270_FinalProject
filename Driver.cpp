@@ -23,23 +23,19 @@ struct Supplement{
     }
 };
 Supplement *suppArray[52];
-void displayMenu();
-int getFileSize(char * fileName);
+void displayMenu(); // calls the function that sets up the user menu options
 void readFileIntoTree(SuppTree * ST, char * fileName);
 
 int main(int argc, char*argv[])
 {
     int input;
-    // Determine the size of the text file.
-    //int fileSize = getFileSize(argv[1]);
-    //cout << "about to create object\n";
-    // Create a new communication network
+    
     SuppTree *ST = new SuppTree();
 
     // Read each line and add it to tree
     readFileIntoTree(ST, argv[1]);
 
-    // Flag used for exiting menu
+    // Flag used for exiting menu when user wants to quit - breaks loop
     bool quit = false;
 
     // Used for input

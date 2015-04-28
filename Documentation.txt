@@ -1,4 +1,32 @@
+/*
+Function prototype:
+void displayMenu();
 
+Function description:
+Method prints the contents for the user to select in menu format - no parameters needed
+
+Example:
+bubbleSort();
+
+Precondition: The function contains cout statements for how the menu will lool
+Post condition: menu presented to user in a professional format
+
+*/
+
+/*
+Function prototype:
+void readFileIntoTree(SuppTree * ST, char * fileName);
+
+Function description:
+Method reads in the file given as a command line argument. Stops when the end of the file is reached.
+
+Example:
+readFileIntoTree(SuppTree * ST, char * filename); (where ST is a class object of type SuppTree and filename is a previously define variable set equal to argv[1])
+
+Precondition: filename and ST must be previously define.
+Post condition: File provided will successfully be read in, sorted into four categories by commas and a newline.
+
+*/
 
 /*
 Function prototype:
